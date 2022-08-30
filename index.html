@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/scss/main.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="menu">
+    <div class="ham-menu">
+      <label for="hamburger_box">
+        <img src="/src/images/menu@2X.png" alt="" class="hamburger">
+      </label>
+      <input type="checkbox" class="hamburger_box" id="hamburger_box">
+      <div class="hamburger_menu">
+        <ul class="hamburger_wraper">
+          <li>男款</li>
+          <li>女款</li>
+          <li>最新消息</li>
+          <li>客製商品</li>
+          <li>聯絡我們</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alpha_logo">
+      <img src="/src/images/Logo@2X.png" alt="logo" class="logo">
+    </div>
+    </div>
+  </header>
+
+  <main>
+    
+    <div class="left_wrapper">
+    <section id="step_box">
+      <p class="checkout">結帳</p>
+      <div class="step_wrapper">
+        <div class="step active">
+          <div class="circle_container cn1"><span>1</span></div>
+          <span class="connect_line cn2"></span>
+          <div class="label_container cn3">寄送地址</div>
+        </div>
+        <div class="step">
+          <div class="circle_container cl1"><span>2</span></div>
+          <span class="connect_line cl2"></span>
+          <div class="label_container cl3">運送方式</div>
+        </div>
+        <div class="step">
+          <div class="circle_container cx1"><span>3</span></div>
+          <div class="label_container cx3">付款資訊</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form">
+      <form action="">
+        <div class="form_wrapper">
+          <div class="part">
+            <div class="address">
+              <p>寄送地址</p>
+            </div>
+            <div class="form_content">
+              <div class="name_wrapper">
+                <div class="tittle"><label>稱謂</label>
+                  <div class="select_wrapper">
+                    <select name="select_name" id="select_title">
+                      <option value="Mr">先生</option>
+                      <option value="Miss">小姐</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="name"><label>姓名</label>
+                  <input type="text" placeholder="請輸入姓名" class="input_name">
+                </div>
+              </div>
+
+              <div class="phone_number"><label>電話</label>
+                <input type="text" placeholder="請輸入行動電話">
+              </div>
+
+              <div class="email"><label>Email</label>
+                <input type="email" placeholder="請輸入電子郵件">
+              </div>
+
+              <div class="city"><label>縣市</label>
+                <select name="select_city" id="select_city">
+                  <option value="choice">請選擇縣市</option>
+                  <option value="0">
+                    台北市 </option>
+                  <option value="1">
+                    基隆市 </option>
+                  <option value="2">
+                    台北縣 </option>
+                  <option value="3">
+                    宜蘭縣 </option>
+                  <option value="4">
+                    新竹市 </option>
+                  <option value="5">
+                    新竹縣 </option>
+                  <option value="6">
+                    桃園縣 </option>
+                  <option value="7">
+                    苗栗縣 </option>
+                  <option value="8">
+                    台中市 </option>
+                  <option value="9">
+                    台中縣 </option>
+                  <option value="10">
+                    彰化縣 </option>
+                  <option value="11">
+                    南投縣 </option>
+                  <option value="12">
+                    嘉義市 </option>
+                  <option value="13">
+                    嘉義縣 </option>
+                  <option value="14">
+                    雲林縣 </option>
+                  <option value="15">
+                    台南市 </option>
+                  <option value="16">
+                    台南縣 </option>
+                  <option value="17">
+                    高雄市 </option>
+                  <option value="18">
+                    高雄縣 </option>
+                  <option value="19">
+                    澎湖縣 </option>
+                  <option value="20">
+                    屏東縣 </option>
+                  <option value="21">
+                    台東縣 </option>
+                  <option value="22">
+                    花蓮縣 </option>
+                  <option value="23">
+                    金門縣 </option>
+                  <option value="24">
+                    連江縣 </option>
+
+                </select>
+              </div>
+
+              <div class="d_address"><label>地址</label>
+                <input type="text" placeholder="請輸入地址">
+              </div>
+            </div>
+          </div>
+
+          <div class="part d-none">
+            <div class="delivery">
+              <p>運送方式</p>
+            </div>
+            <div class="form-content">
+              <div class="port">
+                <input type="radio" name="port">
+                <div class="port_info">
+                  <span class="m">標準運送</span>
+                  <span>免費</span>
+                  <p>約3~7個工作天</p>
+                </div>
+              </div>
+
+              <div class="port">
+                <input type="radio" name="port">
+                <div class="port_info">
+                  <span class="m">DHL貨運</span>
+                  <span>$500</span>
+                  <p>48小時內送達</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="part d-none">
+            <div class="payment">
+              <p>付款資訊</p>
+            </div>
+            <div class="form-content">
+              <div class="card_name"><label>持卡人姓名</label>
+                <input type="text" placeholder="John Doe">
+              </div>
+
+              <div class="card_number"><label>卡號</label>
+                <input type="text" placeholder="1111 2222 3333 4444">
+              </div>
+
+              <div class="expire"><label>有效期限</label>
+                <input type="text" placeholder="MM/YY">
+              </div>
+
+              <div class="cvc"><label>CVC/CCV</label>
+                <input type="text" placeholder="123">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </form>
+    </section>
+    </div>
+
+    <section id="cart">
+      <div class="cart_wrapper">
+        <div class="cart_one">
+          <img src="/src/images/product.1.png" alt="" class="product_img">
+          <div class="cart_right">
+            <p class="product_title">破壞補釘修身牛仔褲</p>
+            <div class="quantity">
+              <div class="iconMinus">
+              <img src="/src/images/icon-minus@2X.png" alt="" class="icon1">
+              </div>
+              <p class="quantity_number amount1">1</p>
+              <div class="iconPlus">
+              <img src="/src/images/icon-plus@2X.png" alt="" class="icon2">
+              </div>
+            </div>
+            <p class="cost total1">$3,999</p>
+          </div>
+        </div>
+
+        <div class="cart_two">
+          <img src="/src/images/product.2.png" alt="" class="product_img">
+          <div class="cart_right">
+            <p class="product_title">刷色直筒牛仔褲</p>
+            <div class="quantity">
+              <div class="iconMinus">
+              <img src="/src/images/icon-minus@2X.png" alt="" class="icon1">
+              </div>
+              <p class="quantity_number amount2">1</p>
+              <div class="iconPlus">
+              <img src="/src/images/icon-plus@2X.png" alt="" class="icon2">
+              </div>
+            </div>
+            <p class="cost total2">$1,299</p>
+          </div>
+        </div>
+
+        <div class="price1">
+          <span>運費</span>
+          <span class="free_bold">免費</span>
+        </div>
+
+        <div class="price2">
+          <span>小計</span>
+          <span class="total_amount">$5,298</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="button">
+      <button disabled class="btn btn_outline">上一步</button>
+      <button class="btn btn_primary">下一步</button>
+    </div>
+  </main>
+
+  <script src="/src/main.js"></script>
+</body>
+
+</html>

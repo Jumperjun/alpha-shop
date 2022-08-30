@@ -1,0 +1,497 @@
+@import 'reset';
+
+html,
+body {
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  max-width: 375px;
+}
+
+
+header {
+  .menu {
+
+    margin-top: 16px;
+    position: relative;
+    width: 375px;
+    height: 56px;
+    padding-top: 16px;
+
+    .hamburger {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 15px;
+
+    }
+
+    input {
+      display: none;
+    }
+
+
+    .hamburger_menu {
+      margin-top: 32px;
+      position: absolute;
+      display: none;
+
+      ul {
+        outline: 1px solid tomato;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 375px;
+
+        li {
+          border-bottom: 2px solid $light-gray;
+          width: 100%;
+          padding-top: 24px;
+          padding-bottom: 24px;
+
+        }
+
+      }
+    }
+
+    .logo {
+      position: absolute;
+      width: 135.86px;
+      height: 24px;
+      left: 119px;
+    }
+
+    .hamburger_box :checked {
+      .hamburger_menu {
+        display: block;
+      }
+    }
+
+  }
+}
+
+main {
+
+  #step_box {
+    margin-top: 32px;
+    margin-left: 15px;
+
+    .checkout {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 38px;
+    }
+
+    .step_wrapper {
+      margin-top: 24px;
+      display: flex;
+      position: relative;
+      justify-content: flex-start;
+
+      .circle_container {
+        height: 32px;
+        width: 32px;
+        border: 1px solid $light-gray;
+        border-radius: 50%;
+        color: $light-gray;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 32px;
+        text-align: center;
+        margin-right: 100px;
+
+      }
+
+      .connect_line {
+        display: block;
+        height: 1px;
+        width: 60px;
+        background: $light-gray;
+        position: absolute;
+        top: 16px;
+        margin-left: 50px;
+      }
+
+      .label_container {
+        display: none;
+      }
+
+      & .checked,
+      .active {
+        .circle_container {
+          background: $black;
+          color: $white;
+        }
+
+        .connect_line {
+          background: $black;
+        }
+      }
+
+      & .checked {
+        .circle_container>span {
+          display: none;
+        }
+
+        .circle_container::after {
+          content: "\2714";
+        }
+      }
+
+
+    }
+  }
+
+  #form {
+    position: relative;
+    left: 15px;
+
+    label {
+      display: block;
+    }
+
+    input {
+      width: 345px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid $form-border-color;
+      padding-left: 8px;
+      margin-top: 7px;
+    }
+
+    select {
+      -webkit-appearance: none;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid $form-border-color;
+      color: $text-gray;
+      padding-left: 8px;
+      margin-top: 7px;
+
+    }
+
+    .form_wrapper {
+      .part {
+        margin-top: 24px;
+
+        .address {
+          @extend %bold-text;
+        }
+
+        .form_content {
+          @extend %normal-text;
+          margin-top: 24px;
+
+          .name_wrapper {
+            display: flex;
+
+            .input_name {
+              width: 183px;
+            }
+
+            select {
+              margin-right: 31px;
+              width: 131px;
+
+              .select_wrapper {
+                position: relative;
+
+                & ::after {
+                  content: "";
+                  border-style: solid;
+                  border-width: 6px 5px 0 5px;
+                  border-color: $light-gray transparent transparent transparent;
+                  position: absolute;
+                  top: 50%;
+                  right: 8px;
+                  transform: translateY(-50%);
+                }
+              }
+
+            }
+
+          }
+
+          .phone_number {
+            margin-top: 24px;
+          }
+
+          .email {
+            margin-top: 16px;
+          }
+
+          .city {
+            margin-top: 24px;
+
+            select {
+              width: 345px;
+            }
+          }
+
+          .d_address {
+            margin-top: 16px;
+          }
+        }
+      }
+
+      .part {
+        .delivery {
+          @extend %bold-text;
+        }
+
+        .port {
+          margin-top: 24px;
+          display: flex;
+          width: 345px;
+          height: 60px;
+          border: 1px solid $light-gray;
+          border-radius: 3px;
+          align-items: center;
+
+          & input[type="radio"] {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+
+            &:checked {
+              box-shadow: inset 0 0 0 5px $black;
+            }
+
+          }
+
+
+
+          input {
+            width: 20px;
+            margin-left: 15px;
+          }
+
+          .port_info {
+            margin-left: 10px;
+          }
+
+          .m {
+            display: inline-block;
+            padding-right: 160px;
+          }
+        }
+
+
+      }
+
+      .part {
+        .payment {
+          @extend %bold-text;
+        }
+
+        .form-content {
+          @extend %normal-text;
+
+          .card_name {
+            margin-top: 24px;
+          }
+
+          .card_number {
+            margin-top: 24px;
+          }
+
+          .expire {
+            margin-top: 24px;
+          }
+
+          .cvc {
+            margin-top: 24px;
+          }
+        }
+
+      }
+    }
+  }
+
+  #cart {
+    margin-top: 48px;
+    margin-left: 31px;
+    width: 315px;
+
+    .cart_wrapper {
+
+      .cart_right {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        position: absolute;
+        top: 16px;
+        width: 85%;
+
+        .product_title {
+          color: $secondary-black;
+          font-size: 16px;
+          display: flex;
+
+        }
+
+        .quantity {
+          display: flex;
+          position: relative;
+          top: 35px;
+
+        }
+
+        .quantity_number {
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          right: 35px;
+        }
+
+        .icon1 {
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          right: 90px;
+        }
+
+        .icon2 {
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          right: 0;
+        }
+
+        .cost {
+          position: absolute;
+          top: 80px;
+          bottom: 0;
+        }
+      }
+
+
+      .cart_one {
+        padding-top: 16px;
+        width: 375px;
+        position: relative;
+
+      }
+
+      .cart_two {
+        margin-top: 16px;
+        padding-top: 16px;
+        width: 375px;
+        position: relative;
+      }
+
+      .price1,
+      .price2 {
+        margin-top: 16px;
+        border-top: 1px solid $light-gray;
+        width: 315px;
+        padding-top: 16px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .price1 {
+        .free_bold {
+          font-weight: bold;
+        }
+      }
+
+      .price2 {
+        padding-bottom: 48px;
+        border-bottom: 1px solid $light-gray
+      }
+
+    }
+  }
+
+  .button {
+    position: absolute;
+    width: 345px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    .btn_outline {
+      width: 156px;
+      height: 46px;
+      left: 15px;
+      color: $black;
+
+      & ::before {
+        outline: 1px solid tomato;
+        content: "\2190";
+        color: $black;
+
+      }
+    }
+
+    .btn_primary {
+      width: 156px;
+      height: 46px;
+      background: $btn-bg;
+      border-radius: 5px;
+      color: $white;
+
+      & ::after {
+        content: "\2190";
+        color: $white;
+      }
+
+    }
+  }
+}
+
+@media screen and (min-width:375px) {
+
+  html,
+  body {
+    max-width: 1200px;
+  }
+
+  header {
+    display: none;
+  }
+
+  main {
+    display: flex;
+
+    flex: 1 0 auto;
+
+    .left_wrapper {
+      flex: 50% 0 0;
+
+      #step_box {
+
+        .step {
+          position: relative;
+
+          .label_container {
+            display: flex;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+          }
+        }
+      }
+    }
+
+    #cart {
+      border: 1px solid $light-gray;
+      border-radius: 5px;
+      padding-left: 20px;
+      flex: 40% 0 0;
+
+      .quantity :hover {
+        cursor: pointer;
+      }
+    }
+
+    .button {
+      margin-top: 600px;
+    }
+  }
+}

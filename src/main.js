@@ -55,37 +55,50 @@ const total2 = document.querySelector(".total2")
 const totalAmount = document.querySelector(".total_amount")
 
 function cartOneCount(event) {
-  if (event.target.matches(".iconMinus") || event.target.matches(".iconPlus")) {
+  if (event.target.matches(".icon1") || event.target.matches(".icon2")) {
     let amount = Number(amount1.innerText)
     let total = Number(total1.innerText)
-    if (event.target.matches(".iconPlus")) {
+    if (event.target.matches(".icon2")) {
       amount += 1
       total = amount * 3999
-    } else if (event.target.matches("iconMinus")) {
+    }else if (event.target.matches(".icon1")) {
+      if(amount>0){
       amount -= 1
       total = amount * 3999
+      }
     }
     amount1.innerText = amount
     total1.innerText = total
+    getTotalAmount()
   }
 }
 
 function cartTwoCount(event) {
-  if (event.target.matches(".iconMinus") || event.target.matches(".iconPlus")) {
+  if (event.target.matches(".icon1") || event.target.matches(".icon2")) {
     let amount = Number(amount2.innerText)
     let total = Number(total2.innerText)
-    if (event.target.matches(".iconPlus")) {
+    if (event.target.matches(".icon2")) {
       amount += 1
-      total = amount * 3999
-    } else if (event.target.matches("iconMinus")) {
+      total = amount * 1299
+    } else if (event.target.matches(".icon1")) {
+      if(amount>0){
       amount -= 1
-      total = amount * 3999
+      total = amount * 1299
+      }
     }
     amount2.innerText = amount
     total2.innerText = total
+    getTotalAmount()
   }
 }
 
+function getTotalAmount(){
+  let total_1=Number(total1.innerText)
+  let total_2=Number(total2.innerText)
+  total_all= total_1+total_2
+
+  return (totalAmount.innerText=total_all)
+}
 
 btnControl.addEventListener("click", handleBtnControlClicked)
 cart1.addEventListener("click", cartOneCount)
